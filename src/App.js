@@ -20,7 +20,7 @@ class App extends Component {
         <div className="section no-pad-bot" id="index-banner">
           <div className="container">
             <br></br><br></br>
-            <h1 className="header center orange-text">BODY OF OUR APP</h1>
+            <h1 className="header center orange-text">Do you even lift (state) bruh?!</h1>
             <div className="row center">
               <Qod />
 
