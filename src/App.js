@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import HabitTracker from './components/HabitTracker'
+import WorkoutLog from './components/WorkoutLog'
+
 class App extends Component {
   render() {
     return (
@@ -29,14 +31,12 @@ class App extends Component {
 
         <div className="container">
           <div className="section">
-
-
             <div className="row">
-              <div className="col s12 m4">
-                <div className="icon-block">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, beatae! Et est veniam perspiciatis, voluptas voluptate obcaecati expedita, in minus optio voluptatibus laborum neque voluptatem earum quia distinctio doloribus animi?
-                </div>
-              </div>
+
+
+              <WorkoutLog/>
+
+
 
               <div className="col s12 m4">
                 <div className="icon-block">
@@ -47,7 +47,6 @@ class App extends Component {
             <HabitTracker />
 
             </div>
-
           </div>
           <br></br><br></br>
         </div>
