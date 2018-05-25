@@ -4,6 +4,7 @@ import './App.css';
 import HabitTracker from './components/HabitTracker'
 import GoalTracker from './components/GoalTracker'
 import Qod from './components/Qod'
+import WorkoutLog from './components/WorkoutLog'
 
 
 class App extends Component {
@@ -34,21 +35,18 @@ class App extends Component {
 
         <div className="container">
           <div className="section">
-
-
             <div className="row">
-              <div className="col s12 m4">
-                <div className="icon-block">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, beatae! Et est veniam perspiciatis, voluptas voluptate obcaecati expedita, in minus optio voluptatibus laborum neque voluptatem earum quia distinctio doloribus animi?
-                </div>
-              </div>
+
+
+              <WorkoutLog/>
+
+
 
               <GoalTracker />
 
             <HabitTracker />
 
             </div>
-
           </div>
           <br></br><br></br>
         </div>
