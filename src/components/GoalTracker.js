@@ -2,21 +2,23 @@ import React from 'react'
 import Goals from './Goals'
 class GoalTracker extends React.Component{
   state = {
-    goals:[]
+    goals:[],
+    goal: ""
   }
+
+
+
+handleChange = (event) => {
+  this.setState({
+    [event.target.id]: event.target.value
+  });
+}
 
 addGoal = (event) => {
   event.preventDefault();
   this.setState({
-     goals: [...this.state.goals, event.target.value]
-  });
-}
-
-handleChange = (event) => {
-  event.preventDefault();
-
-  this.setState({
-    [event.target.id]: event.target.value
+     goals: [...this.state.goals, this.state.goal],
+     goal: ""
   });
 }
 
@@ -30,7 +32,7 @@ handleChange = (event) => {
 
       <div className="row">
         <div className="input-field col s12">
-          <input onChange={this.handleChange} id="habit" type="habit" className="validate" placeholder='Goal'/>
+          <input onChange={this.handleChange} id="goal" type="habit" className="validate" placeholder='Goal'/>
             <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
         </div>
       </div>
@@ -42,7 +44,7 @@ handleChange = (event) => {
     </div>
     <div className="row">
       {this.state.goals.map((goal) => {
-        return <Goals goal={this.state.goals} />
+        return <Goals goal={goal} />
       })}
     </div>
         </div>
