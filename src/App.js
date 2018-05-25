@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import HabitTracker from './components/HabitTracker'
+import GoalTracker from './components/GoalTracker'
+import Qod from './components/Qod'
+
+
 class App extends Component {
   render() {
     return (
@@ -18,7 +22,8 @@ class App extends Component {
             <br></br><br></br>
             <h1 className="header center orange-text">BODY OF OUR APP</h1>
             <div className="row center">
-              <h5 className="header col s12 light">COMPONENTS GO HERE</h5>
+              <Qod />
+
             </div>
 
             <br></br><br></br>
@@ -38,11 +43,7 @@ class App extends Component {
                 </div>
               </div>
 
-              <div className="col s12 m4">
-                <div className="icon-block">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, beatae! Et est veniam perspiciatis, voluptas voluptate obcaecati expedita, in minus optio voluptatibus laborum neque voluptatem earum quia distinctio doloribus animi?
-                </div>
-              </div>
+              <GoalTracker />
 
             <HabitTracker />
 
