@@ -11,11 +11,9 @@ class WorkoutLog extends React.Component{
     }
   }
 
-  this.setState({currentStudent:{...this.state.currentStudent, name: e.target.value}})
-  }
 
   handleWorkout = (e) => {
-    this.setState({: e.target.value})
+    this.setState({newWorkout: e.target.value})
   }
 
   handleSets = (e) => {

@@ -5,7 +5,7 @@ import HabitTracker from './components/HabitTracker'
 import GoalTracker from './components/GoalTracker'
 import Qod from './components/Qod'
 import WorkoutLog from './components/WorkoutLog'
-
+import CalorieCounter from './components/CalorieCounter'
 
 class App extends Component {
   render() {
@@ -24,7 +24,7 @@ class App extends Component {
             <h1 className="header center orange-text">Do you even lift (state) bruh?!</h1>
             <div className="row center">
               <Qod />
-
+              <CalorieCounter />
             </div>
 
             <br></br><br></br>
