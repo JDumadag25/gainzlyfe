@@ -6,23 +6,39 @@ import GoalTracker from './components/GoalTracker'
 import Qod from './components/Qod'
 import WorkoutLog from './components/WorkoutLog'
 import CalorieCounter from './components/CalorieCounter'
-
+import Sidenav from './components/Sidenav'
 class App extends Component {
+
+state = {
+  isOpen: false
+}
+
+handleSideNav = (e) => {
+  this.setState({isOpen: !this.state.isOpen})
+  // this.setState({
+  //     isOpen: !this.state.isOpen
+  // });
+}
+
+
   render() {
+
     return (
       <div>
         <nav className="light-blue lighten-1" role="navigation">
           <div className="nav-wrapper container"><a id="logo-container" href="#" className="brand-logo">GAINZ</a>
             <ul className="right hide-on-med-and-down">
-              <li><a href="#">Navbar Link</a></li>
+              <li><a  onClick={(e)=> this.handleSideNav(e)} className="toggle" href="#">My Foods</a></li>
+
             </ul>
           </div>
         </nav>
+          <Sidenav isOpen={this.state.isOpen} />
         <div className="section no-pad-bot" id="index-banner">
           <div className="container">
             <br></br><br></br>
             <h1 className="header center orange-text">Do you even lift (state) bruh?!</h1>
-            <div className="row center">
+            <div className="row">
               <Qod />
               <CalorieCounter />
             </div>

@@ -18,11 +18,11 @@ class Qod extends React.Component {
     return (
 
 
-          <blockquote>
+          <blockquote className="center">
             <h5 className="header col s12 light">{this.state.quotes}</h5>
              <h5 className="header col s12 light">-{this.state.author}</h5>
           </blockquote>
-          
+
 
     )
   }

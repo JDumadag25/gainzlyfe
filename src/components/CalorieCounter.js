@@ -39,17 +39,23 @@ handleSearchSubmit = (e) => {
           return <SearchResult result={result} />
     });
     return (
-      <div className="search-wrapper col l11">
-                  <input on onChange={(e)=> this.handleSearch(e)} id="search" value={this.state.query} placeholder="Search" />
+      <div className="search-wrapper col l12">
+                  <input  onChange={(e)=> this.handleSearch(e)} id="search" value={this.state.query} placeholder="Search" />
                   <button onClick={(e)=>this.handleSearchSubmit(e)} className="btn waves-effect waves-light">search</button>
                 {this.state.brandedSearch.length > 0 ?
                   <div className="search-results">
+
                   <table>
-                  <tr><th>Food Name</th><th>Calorie Count</th></tr>
+                  <tr>
+                    <th >Food Name</th>
+                    <th>Serving Qty</th>
+                    <th>Calorie Count</th>
+                    <th></th>
+                  </tr>
                     {searchResults}
                   </table>
                   </div> : false}
-          </div>
+              </div>
 
 
     )
