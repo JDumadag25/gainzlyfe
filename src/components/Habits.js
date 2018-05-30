@@ -17,8 +17,8 @@ class Habits extends React.Component{
         <ul>
           <div className='row' onClick={this.handleClick}>
             <li>
-              <div className='m12'>Habit: {this.props.habit}</div>
-              <div className='m12'>Streak: {this.state.streak}</div>
+              <div className='m12' id='habitinfo'>Habit: {this.props.habit}</div>
+              <div className='m12' id='habitinfo'>Streak: {this.state.streak}</div>
             </li>
           </div>
         </ul>

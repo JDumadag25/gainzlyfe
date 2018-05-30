@@ -24,9 +24,9 @@ addGoal = (event) => {
 
   render() {
     return (
-      <div className="col s12 m4">
+      <div className="col s12 m4" id='comp'>
         <div className="icon-block">
-          <h4>Goal Tracker</h4>
+          <h4 id='tracker'>Goal Tracker</h4>
         <div className="row">
     <form onSubmit={this.addGoal} className="col s12">
 

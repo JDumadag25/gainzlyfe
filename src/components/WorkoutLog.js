@@ -3,39 +3,35 @@ import Workouts from './Workouts'
 
 class WorkoutLog extends React.Component{
   state = {
-    workouts: {
-      name:[],
-      sets:[],
-      reps:[],
-      weight:[],
+    workouts: [],
+      nameForm:[],
+      setsForm:[],
+      repsForm:[],
+      weightForm:[]
     }
-  }
 
-  this.setState({currentStudent:{...this.state.currentStudent, name: e.target.value}})
-  }
 
-  handleWorkout = (e) => {
-    this.setState({: e.target.value})
+
+
+  handleName = (e) => {
+    this.setState({nameForm: e.target.value})
   }
 
   handleSets = (e) => {
-    this.setState({newSet: e.target.value})
+    this.setState({setForm: e.target.value})
   }
 
   handleReps = (e) => {
-    this.setState({newRep: e.target.value})
+    this.setState({repForm: e.target.value})
   }
 
   handleWeight = (e) => {
-    this.setState({newWeight: e.target.value})
+    this.setState({weightForm: e.target.value})
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.setState({workouts: [...this.state.workouts, this.state.newWorkout],
-      sets: [...this.state.sets, this.state.newSet],
-      reps: [...this.state.reps, this.state.newRep],
-      weight: [...this.state.weight, this.state.newWeight],
+    this.setState({workouts: {...this.state.workouts, name: this.state.nameForm}
     })
   }
 
@@ -52,8 +48,8 @@ class WorkoutLog extends React.Component{
 
       <div className="row">
         <div className="input-field col s12">
-          <form>
-            <input id="workout" type="text" className="validate" placeholder='Workout' onChange={this.handleWorkout}/>
+          <form onSubmit={this.handleSubmit}>
+            <input id="workout" type="text" className="validate" placeholder='Workout' onChange={this.handleName}/>
             <input id="sets" type="number" className="validate" placeholder='Sets' onChange={this.handleSets}/>
             <input id="reps" type="number" className="validate" placeholder='Reps' onChange={this.handleReps}/>
             <input id="weight" type="number" className="validate" placeholder='Weight' onChange={this.handleWeight}/>
@@ -62,7 +58,6 @@ class WorkoutLog extends React.Component{
         </div>
       </div>
     </form>
-
 
 
           </div>

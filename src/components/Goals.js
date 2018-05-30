@@ -4,7 +4,7 @@ const Goals = (props) => {
 
   return (
 
-  <div>
+  <div id='habitinfo'>
   <form>
   <input type="checkbox" /> {props.goal}
   </form>

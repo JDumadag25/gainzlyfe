@@ -3,13 +3,11 @@ import React from 'react'
 class Workouts extends React.Component{
 
   state = {
-
+    sets: [],
+    reps: [],
+    weight: []
   }
 
-  handleClick = () =>{
-    let points = this.state.streak
-    this.setState({streak: points + 1})
-  }
 
   render(){
     return(
@@ -17,10 +15,10 @@ class Workouts extends React.Component{
         <ul>
           <div className='row'>
             <li>
-              <div className='m12'></div>
-              <div className='m12'></div>
-              <div className='m12'></div>
-              <div className='m12'></div>
+              <div className='m12'>Workout: {this.props.name}</div>
+              <div className='m12'>Sets: {this.props.sets}</div>
+              <div className='m12'>Reps: {this.props.reps}</div>
+              <div className='m12'>Weight: {this.props.weight}</div>
             </li>
           </div>
         </ul>

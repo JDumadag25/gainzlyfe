@@ -21,14 +21,13 @@ class HabitTracker extends React.Component{
 
 
   render() {
-    console.log(this.state.habits)
     const habits = this.state.habits.map((habit) => {
       return <Habits habit={habit}/>
     })
     return (
-      <div className="col s12 m4">
+      <div className="col s12 m4" id='comp'>
         <div className="icon-block">
-          <h4>Habit Tracker</h4>
+          <h4 id='tracker'>Habit Tracker</h4>
         <div className="row">
     <form className="col s12">
 
