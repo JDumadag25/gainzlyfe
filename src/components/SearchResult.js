@@ -1,14 +1,15 @@
 import React from 'react';
 
 const SearchResult = (props) => {
+  const {food_name, serving_qty, nf_calories} = props.result
   return (
 
 
-        <tr className="col l12">
-          <td>{props.result.food_name}</td>
-          <td>{props.result.serving_qty}</td>
-          <td>{props.result.nf_calories}</td>
-          <td><button className="btn waves-effect waves-light right-align" type="submit">Add</button></td>
+        <tr>
+          <td>{food_name}</td>
+          <td>{serving_qty}</td>
+          <td>{nf_calories}</td>
+          <td><button onClick={(e,food,cal)=> props.handleAddButton(e, food_name,nf_calories)} className="btn waves-effect waves-light right-align" >Add</button></td>
         </tr>
 
 

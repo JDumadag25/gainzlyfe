@@ -10,19 +10,50 @@ import Sidenav from './components/Sidenav'
 class App extends Component {
 
 state = {
-  isOpen: false
+  isOpen: false,
+  brandedSearch:[],
+  calories: [],
+  foodNames: [],
+  calCount: 0
 }
 
 handleSideNav = (e) => {
   this.setState({isOpen: !this.state.isOpen})
-  // this.setState({
-  //     isOpen: !this.state.isOpen
-  // });
+}
+
+handleSearch = (e) => {
+  e.preventDefault();
+  this.setState({
+    query: e.target.value
+  })
+
+}
+
+handleAddButton = (e,food, cal) =>{
+  e.preventDefault();
+    console.log(e, cal)
+    let cals = [... this.state.calories, cal]
+    let foods = [... this.state.foodNames, food]
+
+    this.setState({
+        calories: cals,
+        foodNames: foods
+    }, () => {
+          let calCount = 0;
+          this.state.calories.forEach((cal) => {
+              return calCount += cal;
+      });
+
+      this.setState({
+          calCount: calCount
+      });
+    });
 }
 
 
-  render() {
 
+
+  render() {
     return (
       <div>
         <nav className="light-blue lighten-1" role="navigation">
@@ -33,14 +64,14 @@ handleSideNav = (e) => {
             </ul>
           </div>
         </nav>
-          <Sidenav isOpen={this.state.isOpen} />
+          <Sidenav foodNames={this.state.foodNames} calCount={this.state.calCount} showCals={this.state.calories} isOpen={this.state.isOpen} />
         <div className="section no-pad-bot" id="index-banner">
           <div className="container">
             <br></br><br></br>
             <h1 className="header center orange-text">Do you even lift (state) bruh?!</h1>
             <div className="row">
               <Qod />
-              <CalorieCounter />
+
             </div>
 
             <br></br><br></br>
@@ -60,7 +91,7 @@ handleSideNav = (e) => {
 
               <GoalTracker />
 
-            <HabitTracker />
+            <CalorieCounter handleAddButton={this.handleAddButton} />
 
             </div>
           </div>
