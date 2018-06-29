@@ -8,11 +8,55 @@ import WorkoutLog from './components/WorkoutLog'
 import HeartRate from './components/HeartRate'
 import Steps from './components/Steps'
 import Sleep from './components/Sleep'
+import CalorieCounter from './components/CalorieCounter'
+import Sidenav from './components/Sidenav'
 
 
 
 
 class App extends Component {
+
+  state = {
+  isOpen: false,
+  brandedSearch:[],
+  calories: [],
+  foodNames: [],
+  calCount: 0
+}
+
+handleSideNav = (e) => {
+  this.setState({isOpen: !this.state.isOpen})
+}
+
+handleSearch = (e) => {
+  e.preventDefault();
+  this.setState({
+    query: e.target.value
+  })
+
+}
+
+handleAddButton = (e,food, cal) =>{
+  e.preventDefault();
+    console.log(e, cal)
+    let cals = [... this.state.calories, cal]
+    let foods = [... this.state.foodNames, food]
+
+    this.setState({
+        calories: cals,
+        foodNames: foods
+    }, () => {
+          let calCount = 0;
+          this.state.calories.forEach((cal) => {
+              return calCount += cal;
+      });
+
+      this.setState({
+          calCount: calCount
+      });
+    });
+}
+
 
 
 
@@ -25,9 +69,12 @@ class App extends Component {
             <ul className="right hide-on-med-and-down">
               <li><a href="https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=22CSSF&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800
 ">Log in to FitBit</a></li>
+              <li><a  onClick={(e)=> this.handleSideNav(e)} className="toggle" href="#">My Foods</a></li>
             </ul>
           </div>
         </nav>
+        
+          <Sidenav foodNames={this.state.foodNames} calCount={this.state.calCount} showCals={this.state.calories} isOpen={this.state.isOpen} />
         <div className="section no-pad-bot" id="index-banner">
           <div className="container" >
             <br></br><br></br>
@@ -58,6 +105,7 @@ class App extends Component {
 
               <GoalTracker />
 
+            <CalorieCounter handleAddButton={this.handleAddButton} />
 
           </div>
 

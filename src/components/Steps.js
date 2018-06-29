@@ -1,4 +1,5 @@
 import React from 'react'
+import FITBIT_API_KEY from '../env';
 
 class Steps extends React.Component {
   state = {
@@ -12,7 +13,7 @@ getData = () => {
   fetch('https://api.fitbit.com/1/user/-/activities/date/today.json',{
 method: 'GET',
 headers: {
-  "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzR0pKSEciLCJhdWQiOiIyMkNTU0YiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJzZXQgcmFjdCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI3NzIwNTE0LCJpYXQiOjE1Mjc2OTE3MTR9.Oyg4VAF0dKsH6hSDEv-_m1nWtaUu8zt9LaaxU8vj7AM"
+  "Authorization": `Bearer ${FITBIT_API_KEY}`
 }
 }).then(res =>  res.json())
 .then(data => this.setState({steps: data['summary']['steps'], calories: data['summary']['caloriesOut']}))
