@@ -6,6 +6,7 @@ With the FitBit API users can see how well they are sleeping, resting heart rate
 
 The dashboard also helps you track calories consumed, daily habits and goals.
 
+[Video Demo](https://youtu.be/n4DJT_cemRQ)
 ## Getting Started
 
 Fork and clone this repository.

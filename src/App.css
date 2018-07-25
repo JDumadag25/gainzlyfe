@@ -9087,6 +9087,7 @@ input[type=range]::-ms-thumb {
     display: flex;
     flex-wrap: wrap;
     box-shadow: 3px 3px 3px 3px #ccc;
+    overflow: auto
     }
 
   #index-banner{
